@@ -6,19 +6,19 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:calculator/calculator.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:calculator/main.dart';
-
 void main() {
-  test('must return a + b when a and b are two positive ', () {
-    Calculator calculator = Calculator();
-    int a = 5;
-    int b = 10;
-    int result = a+b;
-    int _result = calculator.add(a, b);
+  group('tests for add component', () {
+    test('must return a + b when a and b are two positive ', () {
+      Calculator calculator = Calculator();
+      int a = 5;
+      int b = 10;
+      int result = a + b;
+      int _result = calculator.add(a, b);
 
-    expect(_result, result);
+      expect(_result, result);
+    });
+
   });
 }
