@@ -10,8 +10,16 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('tests for add component', () {
+    Calculator calculator;
+
+    setUp(() {
+      calculator = Calculator();
+    });
+
+    /**
+     * add
+     */
     test('must return a + b when a and b are two positive ', () {
-      Calculator calculator = Calculator();
       int a = 5;
       int b = 10;
       int result = a + b;
@@ -20,5 +28,69 @@ void main() {
       expect(_result, result);
     });
 
+    test('must return a + b when a and b are two negative ', () {
+      int a = -5;
+      int b = -10;
+      int result = a + b;
+      int _result = calculator.add(a, b);
+
+      expect(_result, result);
+    });
+
+    test('must return a + b when a is positive and b is negative ', () {
+      int a = 5;
+      int b = -10;
+      int result = a + b;
+      int _result = calculator.add(a, b);
+
+      expect(_result, result);
+    });
+
+    test('must return a + b when a is negative and b is  positive ', () {
+      int a = 5;
+      int b = 10;
+      int result = a + b;
+      int _result = calculator.add(a, b);
+
+      expect(_result, result);
+    });
+
+    /**
+     * subtract
+     */
+
+    test('must return a - b when a and b are positive ', () {
+      int a = 5;
+      int b = 10;
+      int result = a - b;
+      int _result = calculator.subtract(a, b);
+
+      expect(_result, result);
+    });
+
+    /**
+     * divide
+     */
+
+    test('must return a - b when a and b are positive ', () {
+      int a = 5;
+      int b = 10;
+      int result = a ~/ b;
+      int _result = calculator.divide(a, b);
+
+      expect(_result, result);
+    });
+
+    /**
+     * multiply
+     */
+    test('must return a - b when a and b are positive ', () {
+      int a = 5;
+      int b = 10;
+      int result = a * b;
+      int _result = calculator.multiply(a, b);
+
+      expect(_result, result);
+    });
   });
 }
