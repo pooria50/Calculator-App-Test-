@@ -18,51 +18,28 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.all(25.0),
-          child: Column(
-            children: [
-              SizedBox(
-                height: 200.0,
+        body: Column(
+          children: [
+            TextField(
+              controller: usernameController,
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: "Salam"
               ),
-              Container(
-                margin: const EdgeInsets.symmetric(vertical: 5.0),
-                child: TextField(
-                  controller: usernameController,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(), hintText: 'Enter Username'),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.symmetric(vertical: 5.0),
-                child: TextField(
-                  controller: passwordController,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(), hintText: 'Enter Password'),
-                ),
-              ),
-              SizedBox(
-                height: 10.0,
-              ),
-              Container(
-                width: 310.0,
-                height: 50.0,
-                child: RaisedButton(
-                  disabledColor: Colors.red.withOpacity(0.12),
-                  disabledTextColor: Colors.red.withOpacity(0.38),
-                  onPressed: () {
-                    // getItems();
-                  },
-                  child: GestureDetector(
-                      onTap: () {
-                        // getItems();
-                      },
-                      child: const Text('Saved')),
-                ),
-              )
-            ],
-          ),
-        ),
+            ),
+            RaisedButton(
+              color: Colors.blueGrey,
+              child: Text("Reverse Text"),
+              onPressed: () {
+                if (usernameController.text.isEmpty) return;
+                print("with data");
+                // setState(() {
+                //   _reversedText = reverseText(_controller.text);
+                // });
+              },
+            ),
+          ],
+        )
       ),
     );
   }
